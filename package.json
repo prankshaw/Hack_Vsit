@@ -2,7 +2,7 @@
   "name": "HackVsit",
   "version": "1.0.0",
   "description": "college site",
-  "main": "node finalprep.js",
+  "main": "finalprep.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
