@@ -27,7 +27,7 @@ var db = mongoose.connection;
         if(err) throw err;
         if(isMatch){
           var name=user.FirstName;
-           res.render('admin',{ name: name});
+           res.redirect('admin');
           }
         });
       }
@@ -46,6 +46,17 @@ else{
     go.get('/logout', function(req, res){
       req.logout();
   });
+  //notesview
+  go.get('/notesview', function(req, res){
+  	res.render('notesview');
+  });
 
+  go.get('/login', function(req, res){
+  		res.render('login');
+  });
+
+  go.get('/about', function(req, res){
+  		res.render('about');
+  });
 
 module.exports = go;

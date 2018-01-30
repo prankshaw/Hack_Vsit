@@ -213,6 +213,11 @@ go.get("/userloggedin",function(req,res){
 	    res.render("userloggedin",{data:user});
 	  });
 });
+go.get("/admin",function(req,res){
+	  Request.find({},function(err,user){
+	    res.render("admin",{data:user});
+	  });
+});
 
 go.get('/home', function(req, res){
 	res.render('home');
