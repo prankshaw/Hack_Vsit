@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 //connect to the data base
-mongoose.connect('mongodb://help:help@ds133249.mlab.com:33249/help_ops');
+mongoose.connect('mongodb://help_ops:help@ds133249.mlab.com:33249/help_ops');
 
 
 
