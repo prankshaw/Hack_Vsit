@@ -17,6 +17,9 @@ var RequestSchema = mongoose.Schema({
 	location: {
 		type: String
 	},
+    dept: {
+		type: String
+	},
     subject : {
 		type: String
 	}

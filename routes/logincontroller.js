@@ -111,6 +111,7 @@ var db = mongoose.connection;
   var  request  = req.body.request;
   var  priority  = req.body.priority;
   var  location  = req.body.location;
+  var  Department = req.body.Department;
   var  subject = req.body.subject;
 
 
@@ -122,7 +123,8 @@ var db = mongoose.connection;
                      request  :  request,
                       priority:  priority,
                   location  :location,
-                    subject  : subject
+                    subject  : subject,
+                    dept : Department
                    });
 
               // create users
