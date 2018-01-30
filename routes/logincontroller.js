@@ -164,7 +164,7 @@ else{
     if(isMatch){
       req.session.authenticated = true;
       var name=user.FirstName;
-      	res.render('userloggedin',{ name: name});
+      	res.redirect('/userloggedin');
 
     } else {
         req.flash('error_msg', 'Invalid Password');
