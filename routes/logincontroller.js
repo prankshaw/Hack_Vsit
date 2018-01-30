@@ -134,7 +134,7 @@ var db = mongoose.connection;
 
                 req.flash('success_msg', 'You are sign up and you can  login now');
 
-                res.redirect('userloggedin');
+                res.redirect('/userloggedin');
 
                 // save session.. create user.. save form data.. render page, return json.. etc.
 
@@ -206,8 +206,10 @@ go.get('/request', function(req, res){
 go.get('/signup', function(req, res){
 	res.render('signup');
 });
-go.get('/userloggedin', function(req, res){
-	res.render('userloggedin');
+go.get("/userloggedin",function(req,res){
+	  Request.find({},function(err,user){
+	    res.render("userloggedin",{data:user});
+	  });
 });
 
 go.get('/home', function(req, res){

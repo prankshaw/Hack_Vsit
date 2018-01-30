@@ -121,12 +121,6 @@ go.post('userloggedin',function(req,res){
 
 //upload
 
-go.get('/userloggedin', function(req, res){
-File.find({},function(err,user){
- if (err) throw err;
- res.render("userloggedin",{data:user});
- });
-});
 
 
 

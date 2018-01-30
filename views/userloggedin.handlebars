@@ -441,6 +441,15 @@
                                 <td class="text-truncate">18/05/2016</td>
                                 <td class="text-truncate">$ 685.00</td>
                             </tr>
+                            {{#each data}}
+                            <tr>
+                                <td class="text-truncate"><a href="#">{{this.request}}</a></td>
+                                <td class="text-truncate">{{this.username}}</td>
+                                <td class="text-truncate"><span class="tag tag-default tag-warning">{{this.priority}}</span></td>
+                                <td class="text-truncate">{{this.subject}}</td>
+                                <td class="text-truncate">{{this.location}}</td>
+                            </tr>
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
