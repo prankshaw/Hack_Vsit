@@ -7,7 +7,7 @@ var session = require('express-session');
 var Recaptcha = require('recaptcha-verify');
 
 var recaptcha = new Recaptcha({
-    secret: '6LelzCkUAAAAAEC_24Mr-ILrFLkqJy7ELG3L3-7G',
+    secret: '6LdzT0MUAAAAAOixzSu5Hj9MBujZfviJF7Y4thIU',
     verbose: true
 });
 

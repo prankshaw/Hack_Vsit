@@ -21,7 +21,7 @@ var db = mongoose.connection;
   // authentication
   go.post('/adminlogin',function(req,res){
    User.findOne( {Username:req.body.Username},function(err,user){
-    if(user.Username=="finalprep@admin.login"){
+    if(user.Username=="ithelp@admin.login"){
 
       User.comparePassword(req.body.Password, user.Password, function(err, isMatch){
         if(err) throw err;
