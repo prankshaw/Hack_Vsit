@@ -13,15 +13,7 @@ mongoose.connect('mongodb://help_ops:help@ds133249.mlab.com:33249/help_ops');
 
 //create a schema - this s like a blueprint
 var todoSchema = new mongoose.Schema({
-  path: {
-  type: String,
-  required: true,
-  trim: true
-  },
-  originalname: {
-  type: String,
-  required: true
-  }
+item :String
 });
 
 var Todo = mongoose.model('Todo', todoSchema);
