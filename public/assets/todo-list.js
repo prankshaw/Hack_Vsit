@@ -1,6 +1,5 @@
 $(document).ready(function(){
-
-  $('form').on('submit', function(){
+$('form').on('submit', function(){
 
       var item = $('form input');
       var todo = {item: item.val()};
@@ -32,4 +31,3 @@ $(document).ready(function(){
   });
 
 });
- 
