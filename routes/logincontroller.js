@@ -17,6 +17,7 @@ var go = express();
 
 //include files from models folder
 var User = require('../models/user');
+var Request = require('../models/Request');
 
 
 
@@ -104,6 +105,47 @@ var db = mongoose.connection;
 
 });
 
+// Input data in database
+  go.post('/request', function(req,res){
+  var  username = req.body.username;
+  var  request  = req.body.request;
+  var  priority  = req.body.priority;
+  var  location  = req.body.location;
+  var  subject = req.body.subject;
+
+
+
+
+
+              var newUser = new Request({
+                  username : username,
+                     request  :  request,
+                      priority:  priority,
+                  location  :location,
+                    subject  : subject
+                   });
+
+              // create users
+                 Request.createUser(newUser, function(err, user){
+                   if(err) throw err;
+                   console.log(user);
+
+                });
+
+                req.flash('success_msg', 'You are sign up and you can  login now');
+
+                res.redirect('userloggedin');
+
+                // save session.. create user.. save form data.. render page, return json.. etc.
+
+        });
+
+
+             // save session.. create user.. save form data.. render page, return json.. etc.
+
+
+
+
 
 
 
@@ -157,10 +199,15 @@ delete req.session.authenticated;
 go.get('/', function(req, res){
 	res.render('home');
 });
-
+go.get('/request', function(req, res){
+	res.render('requestuser');
+});
 //signup
 go.get('/signup', function(req, res){
 	res.render('signup');
+});
+go.get('/userloggedin', function(req, res){
+	res.render('userloggedin');
 });
 
 go.get('/home', function(req, res){

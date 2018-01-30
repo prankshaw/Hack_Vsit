@@ -65,7 +65,7 @@ go.use(checkAuth);
 function checkAuth (req, res, next) {
   // don't serve /secure to those not logged in
 	// you should add to this list, for each and every secure url
-	if (((req.url === '/userloggedin/upload/Semester%201') || (req.url === '/userloggedin/upload/Semester%202') || (req.url === '/userloggedin/upload/Semester%203') || (req.url === '/userloggedin/upload/Semester%204') ||(req.url ==='/userloggedinbuzzer4%') ) && (!req.session || !req.session.authenticated)) {
+	if (((req.url === '/request') || (req.url === '/userloggedin') || (req.url === '/userloggedin/upload/Semester%203') || (req.url === '/userloggedin/upload/Semester%204') ||(req.url ==='/userloggedinbuzzer4%') ) && (!req.session || !req.session.authenticated)) {
     req.flash('error',"You need to login First");
     res.redirect('/login');
 		return;
