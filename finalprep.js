@@ -111,7 +111,8 @@ go.use(uploadingadmin );
 
 go.use( '/user',user);
 
+var PORT = process.env.PORT || 3000;
+go.listen(PORT);
+console.log('All well listening to port ', PORT);
 
-//listen to port
-go.listen(3000);
 console.log("listen to the port 3000");
