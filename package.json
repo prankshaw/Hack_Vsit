@@ -21,7 +21,10 @@
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
-    "recaptcha-verify": "^0.1.1"
+    "recaptcha-verify": "^0.1.1",
+    "apiai": "^4.0.2",
+    "dotenv": "^4.0.0",
+    "socketio": "^1.0.0"
   },
   "engines": {
     "node": "6.10.3"
