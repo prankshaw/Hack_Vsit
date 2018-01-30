@@ -4,17 +4,20 @@
   "description": "college site",
   "main": "finalprep.js",
   "dependencies": {
+    "apiai": "^4.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "cloudinary": "^1.9.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "express-recaptcha": "^2.1.0",
     "express-session": "^1.15.3",
     "express-validation": "^1.0.2",
     "express-validator": "^3.2.0",
+    "http": "0.0.0",
     "mongoose": "^4.10.5",
     "multer": "^1.3.0",
     "multer-storage-cloudinary": "^2.2.1",
@@ -22,9 +25,8 @@
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
     "recaptcha-verify": "^0.1.1",
-    "apiai": "^4.0.2",
-    "dotenv": "^4.0.0",
-    "socketio": "^1.0.0"
+    "socketio": "^1.0.0",
+    "url": "^0.11.0"
   },
   "engines": {
     "node": "6.10.3"
