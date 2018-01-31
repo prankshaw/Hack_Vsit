@@ -11,6 +11,7 @@ var cloudinary = require('cloudinary');
 var multer  =   require('multer');
 var cloudinaryStorage = require('multer-storage-cloudinary');
 var passport = require('passport');
+var socket = require('socket.io')
 
 var go = express();
 
@@ -18,8 +19,10 @@ var go = express();
 var logincontroller = require('./routes/logincontroller');
 var adminlogincontroller = require('./routes/adminlogincontroller');
 var uploadingadmin = require('./routes/uploadingadmin');
-var bot = require('./routes/bot');
+
 var user = require('./models/user');
+
+//static files
 
 
 
@@ -108,11 +111,31 @@ go.use(logincontroller );
 go.use(adminlogincontroller );
 go.use(uploadingadmin );
 
-go.use( '/',bot);
+
 go.use( '/user',user);
+
 
 var PORT = process.env.PORT || 3000;
 go.listen(PORT);
+var io = go.get('/chatbox', function(req, res){
+	res.render('socket');
+});
+
+io.on('connection',function(socket){
+  console.log("made socket connection",socket.id);
+
+
+  socket.on('chat',function(data){
+  io.sockets.emit('chat',data);
+});
+
+  socket.on('typing',function(data){
+    socket.broadcast.emit('typing',data);
+  });
+
+});
+
+
 
 console.log('All well listening to port ', PORT);
 

@@ -50,7 +50,9 @@ else{
   go.get('/notesview', function(req, res){
   	res.render('notesview');
   });
-
+  go.get('/bot', function(req, res){
+  	res.render('bot');
+  });
   go.get('/login', function(req, res){
   		res.render('login');
   });
