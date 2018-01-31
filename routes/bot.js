@@ -963,13 +963,13 @@ go.get('/bot/:this',function (req, res) {
 	if (input){
 		var out =eliza.transform(input);
 		console.log('YOU:   '+input);
-		res.end(out);
+		res.send(out);
 		console.log('ELIZA: '+out);
 	}
 	else
 	{
 		var out=eliza.getInitial();
-		res.end(out);
+		output.innerHTML ='<p><strong>'+res.end(out);+'</strong></p>';
 		console.log('ELIZA: '+out);
 	}
 console.log("Hello");
