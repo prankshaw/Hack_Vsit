@@ -18,7 +18,6 @@ var go = express();
 var logincontroller = require('./routes/logincontroller');
 var adminlogincontroller = require('./routes/adminlogincontroller');
 var uploadingadmin = require('./routes/uploadingadmin');
-var bot = require('./routes/bot');
 var user = require('./models/user');
 
 
@@ -108,7 +107,7 @@ go.use(logincontroller );
 go.use(adminlogincontroller );
 go.use(uploadingadmin );
 
-go.use( '/',bot);
+
 go.use( '/user',user);
 
 var PORT = process.env.PORT || 3000;
